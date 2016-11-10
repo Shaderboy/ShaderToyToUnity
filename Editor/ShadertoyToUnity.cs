@@ -30,6 +30,9 @@ internal static class ShadertoyToUnity{
 		code = code.Replace("mod", "fmod");
 		code = code.Replace("iGlobalTime", "_Time.y");
 		code = code.Replace("fragColor =", "return");
+		code = code.Replace("Texture2D", "Tex2D");
+		code = code.Replace("atan(x,y)", "atan2(y,x)");
+
 
 		Regex open = new Regex(@"mat(.)\s*(\()");
 		Match match = open.Match(code);
